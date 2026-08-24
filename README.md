@@ -428,15 +428,17 @@ adb shell pm uninstall --user 0 com.miui.backup #备份（只能备份有备案�
 Google电话、Google短信、Google Photo、微信、Yahoo天气、windy、Onedrive、Firefox、三星浏览器、Google Keep、Spotify等
 
 ## 23. 必备扩展：
-- 登录微信（需要下载小程序扩展）；
-- Firefox添加ad扩展（打开Firefox的“添加桌面快捷方式”权限，如果【设置-开发者模式-“系统优化”】已经关闭，这无此快捷方式权限）；
-- 三星浏览器 添加扩展（在Google Play里下载扩展），如果无法安装，清除 浏览器 数据并重新设置即可。
+- 登录微信（Play版微信需要下载小程序扩展）；
+- Firefox 添加ad扩展（国内IP不可用此功能）；
+- 三星浏览器 添加扩展（在Google Play里下载扩展），如果无法安装，清除 浏览器 数据并重新设置。
   - 国内环境如何安装三星浏览器插件：
       - 在浏览器地址栏输入：internet://debug/
       - 此时在点击浏览器设置，翻到最底下就会出现一个Debug settings选项，点击进去
       - 找到选项：Feature variation test，点击进入 。点击Sales code选项，翻到最底下点击Other，输入：TGY，确认。 点击Country code选项，翻到最底下点击Other，输入：Hong Kong，确认。 点击Country iso code选项，翻到最底下点击Other，输入：HK，确认。
       - 关闭三星浏览器，去任务卡片中划掉它，其实就是重启一下。
-      - 然后点击设置中的广告拦截，此时就可以点击下载拦截器了。如果下载不了（新版本需要在Google Play里面下载插件），就用直接安装广告拦截软件的APK：AdGuard for Samsungbrowser： https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/AdGuard_samsung.browser_2.8.0.apk.7z 、 ABP for Samsungbrowser：https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/ABP_samsung.browser_2.5.7.apk.7z
+      - 然后点击设置中的广告拦截，此时就可以点击下载拦截器了。如果下载不了（新版本需要在Google Play里面下载插件），就用直接安装广告拦截软件的APK的方法（Samsungbrowser V30.0.0 已验证）：
+          - AdGuard for SamsungBrowser： https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/AdGuard_samsung.browser_2.8.0.apk.7z 
+          - ABP for SamsungBrowser：https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/ABP_samsung.browser_2.5.7.apk.7z
 
 ## 24. Firefox、三星浏览器、Edge 添加vivo H5应用商店（ https://h5.appstore.vivo.com.cn ）到桌面快捷方式。。国内安卓应用商店的的访问规则太不稳定了，刚用没多久，网页访问就废了。。此条暂时作废。。
 
