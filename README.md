@@ -1,7 +1,7 @@
 
 # 《小米手机系统优化对照表及说明》
 
-更新时间：2026-04-29，适配HyperOS1、HyperOS2、HyperOS3 ，可能仅限国行版。
+更新时间：2026-08-24（补充版），适配HyperOS1、HyperOS2、HyperOS3 ，可能仅限国行版。
 
 本教程实操先优化“已开启小米系统优化”情况下的手机系统，期间或逐步对比并说明“关闭小米手机系统优化”情况下的手机系统功能变化。
 
@@ -124,7 +124,7 @@ adb push ../android_backup/Files/APK.zip /sdcard/Documents/
 >
 >Gboard输入法： http://www.jxdown.com/soft/42906.html
 >
->类原生桌面： https://lawnchair.app/ （需在该App设置里手动关闭软件禁用才能设置默认桌面）
+>类原生桌面lawnchair： https://lawnchair.app/ （需在该App设置里手动关闭软件禁用才能设置默认桌面）
 > 
 >系统隐藏设置查找（Activity Launcher）： https://www.malavida.com/en/soft/activity-launcher/android/
 >
@@ -403,7 +403,7 @@ adb shell pm uninstall --user 0 com.miui.backup #备份（只能备份有备案�
 
 ===手动重启手机===
 
-## 20. 手机联网：
+## 20. 给手机联网：
 防止手机无法使用（参考本教程的“16.1”步骤）：
 - 安装一个浏览器，比如Edge、三星浏览器、Firefox；
 - 安装一个输入法，比如GBoard、微信输入法。
@@ -413,7 +413,7 @@ adb shell pm uninstall --user 0 com.miui.backup #备份（只能备份有备案�
 ```
 #adb shell pm uninstall --user 0 com.sohu.inputmethod.sogou.xiaomi #搜狗输入法（微信输入法、GBoard输入法代替）
 
-#adb shell pm uninstall --user 0 com.xiaomi.market #小米应用商店，请在此下载安装Google Play（别的商店代替，推荐vivo H5应用商店 （ https://h5.appstore.vivo.com.cn ）、Google Play）
+#adb shell pm uninstall --user 0 com.xiaomi.market #小米应用商店，请在此下载安装Google Play（别的商店代替）、Google Play）
 
 #adb shell pm uninstall --user 0 com.android.providers.downloads #下载器（下载主题、下载系统、自动下载和安装App。如果需要更新系统，ADB恢复下载器软件+重启手机。）
 
@@ -431,17 +431,25 @@ Google电话、Google短信、Google Photo、微信、Yahoo天气、windy、Oned
 - 登录微信（需要下载小程序扩展）；
 - Firefox添加ad扩展（打开Firefox的“添加桌面快捷方式”权限，如果【设置-开发者模式-“系统优化”】已经关闭，这无此快捷方式权限）；
 - 三星浏览器 添加扩展（在Google Play里下载扩展），如果无法安装，清除 浏览器 数据并重新设置即可。
+  - 国内环境如何安装三星浏览器插件：
+      - 在浏览器地址栏输入：internet://debug/
+      - 此时在点击浏览器设置，翻到最底下就会出现一个Debug settings选项，点击进去
+      - 找到选项：Feature variation test，点击进入 。点击Sales code选项，翻到最底下点击Other，输入：TGY，确认。 点击Country code选项，翻到最底下点击Other，输入：Hong Kong，确认。 点击Country iso code选项，翻到最底下点击Other，输入：HK，确认。
+      - 关闭三星浏览器，去任务卡片中划掉它，其实就是重启一下。
+      - 然后点击设置中的广告拦截，此时就可以点击下载拦截器了。如果下载不了（新版本需要在Google Play里面下载插件），就用直接安装广告拦截软件的APK：AdGuard for Samsungbrowser： https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/AdGuard_samsung.browser_2.8.0.apk.7z 、 ABP for Samsungbrowser：https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/ABP_samsung.browser_2.5.7.apk.7z
 
-## 24. Firefox、三星浏览器、Edge 添加vivo H5应用商店（ https://h5.appstore.vivo.com.cn ）到桌面快捷方式。
+## 24. Firefox、三星浏览器、Edge 添加vivo H5应用商店（ https://h5.appstore.vivo.com.cn ）到桌面快捷方式。。国内安卓应用商店的的访问规则太不稳定了，刚用没多久，网页访问就废了。。此条暂时作废。。
 
 ## 25. 这里做一个关于“国内 OAID”和“Google ADID”的说明：
 - 这两个ID都可以跨App追踪用户，实现用户“隐私与广告”跨App互通。
 - 删除OAID：adb删除“com.miui.securitycenter”即可永久关闭OAID。
 - 删除Google ADID：在“Google Services”软件里找“Ads”，选择“删除”即可永久关闭ADID。
 - 设备指纹ID：无需关心。
+- App列表权限：这个不管你优不优化国内任何安卓系统，App都能在不需要用户同意的情况下获取到App列表，所以无需在意，除非你用国外安卓系统。微信、京东、拼多多没有获取应用列表权限，其他App中90%都在暗中获取应用列表权限。
 
 ## 26. 提升手机系统流畅度说明：
 - 关闭“系统优化”后，系统的动画和页面切换效果将变为安卓原生的，即使是60Hz，也比“小米自带动画特效”流畅很多，特别是在低端机上表现特别明显。
+- 小米桌面App真的卡，一个桌面App有可能占800MB的ram，特别是在多系统用户空间下特别卡。我使用第三方桌面lawnchair https://lawnchair.app/ （需在该App设置里手动关闭软件禁用才能设置默认桌面），虽然牺牲了手势操作（启用第三方桌面小米手势就会用不了，只能用三大键，这个真的很鸡贼），但是换来了操作流畅。
 
 ## 27. 如何更新手机系统自带Webview：
 - 打开LibChecker软件 -- 找到 webview -- 选择“打开Launch” -- 选择“Webview DevTools” -- 切换到“Home” -- 点击右上三角，选择"Check for Webview updates" -- 软件自动跳到Google Play商店，点击更新即可。
