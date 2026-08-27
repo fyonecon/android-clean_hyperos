@@ -1,7 +1,7 @@
 
 # 《小米手机系统优化对照表及说明》
 
-更新时间：2026-08-24（补充版），适配HyperOS1、HyperOS2、HyperOS3 ，可能仅限国行版。
+更新时间：2026-08-27（补充版），适配HyperOS1、HyperOS2、HyperOS3 ，可能仅限国行版。
 
 本教程实操先优化“已开启小米系统优化”情况下的手机系统，期间或逐步对比并说明“关闭小米手机系统优化”情况下的手机系统功能变化。
 
@@ -437,8 +437,8 @@ Google电话、Google短信、Google Photo、微信、Yahoo天气、windy、Oned
       - 找到选项：Feature variation test，点击进入 。点击Sales code选项，翻到最底下点击Other，输入：TGY，确认。 点击Country code选项，翻到最底下点击Other，输入：Hong Kong，确认。 点击Country iso code选项，翻到最底下点击Other，输入：HK，确认。
       - 关闭三星浏览器，去任务卡片中划掉它，其实就是重启一下。
       - 然后点击设置中的广告拦截，此时就可以点击下载拦截器了。如果下载不了（新版本需要在Google Play里面下载插件），就用直接安装广告拦截软件的APK的方法（Samsungbrowser V30.0.0 已验证）：
-          - AdGuard for SamsungBrowser： https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/AdGuard_samsung.browser_2.8.0.apk.7z 
-          - ABP for SamsungBrowser：https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/ABP_samsung.browser_2.5.7.apk.7z
+          - AdGuard for SamsungBrowser： https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/AdGuard_samsung.browser_2.8.0.apk.7z （需要把“.7z”后缀直接删掉即可是对应.apk文件。）
+          - ABP for SamsungBrowser：https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/ABP_samsung.browser_2.5.7.apk.7z （需要把“.7z”后缀直接删掉即可是对应.apk文件。）
 
 ## 24. Firefox、三星浏览器、Edge 添加vivo H5应用商店（ https://h5.appstore.vivo.com.cn ）到桌面快捷方式。。国内安卓应用商店的的访问规则太不稳定了，刚用没多久，网页访问就废了。。此条暂时作废。。
 
@@ -448,6 +448,12 @@ Google电话、Google短信、Google Photo、微信、Yahoo天气、windy、Oned
 - 删除Google ADID：在“Google Services”软件里找“Ads”，选择“删除”即可永久关闭ADID。
 - 设备指纹ID：无需关心。
 - App列表权限：这个不管你优不优化国内任何安卓系统，App都能在不需要用户同意的情况下获取到App列表，所以无需在意，除非你用国外安卓系统。微信、京东、拼多多没有获取应用列表权限，其他App中90%都在暗中获取应用列表权限。
+
+⚠️ App OAID及ADID值检查：https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/OAID.apk.7z （需要把“.7z”后缀直接删掉即可是对应.apk文件。）
+
+⚠️ App列表权限检查：https://github.com/fyonecon/clean_hyperos/releases/download/HyperOS3-20260428/AppListViewer.apk.7z （需要把“.7z”后缀直接删掉即可是对应.apk文件。）
+
+
 
 ## 26. 提升手机系统流畅度说明：
 - 关闭“系统优化”后，系统的动画和页面切换效果将变为安卓原生的，即使是60Hz，也比“小米自带动画特效”流畅很多，特别是在低端机上表现特别明显。
